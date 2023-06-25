@@ -13,5 +13,3 @@ $endpoints = [
 ];
 
 $hostname = $_SERVER['HTTP_HOST'];
-
-echo $hostname;
