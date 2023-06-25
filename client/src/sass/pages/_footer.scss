@@ -1,0 +1,52 @@
+@use "../layout/colors" as *;
+@use "../constants/app-constants" as *;
+@use "../helpers/mixins" as *;
+
+.main-footer {
+  background-color: $black;
+
+  border-radius: $GLOBAL_BORDER_RAID $GLOBAL_BORDER_RAID 0px 0px; // top: right, left
+
+  padding: {
+    top: 35px;
+    left: 108px;
+    right: 33px;
+    bottom: 20px;
+  }
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  @include mobile-break {
+    padding: 30px 17px 30px 29px;
+  }
+
+  &__copyright-text {
+    color: $white;
+
+    gap: 14px;
+
+    .copy-icon {
+      font-size: 24px;
+    }
+
+    .text {
+      font-size: 18px;
+
+      @include mobile-break {
+        font-size: 12px;
+
+        line-height: 1.6;
+      }
+
+      > a {
+        color: inherit;
+
+        font-weight: bold;
+
+        text-decoration: underline;
+      }
+    }
+  }
+}

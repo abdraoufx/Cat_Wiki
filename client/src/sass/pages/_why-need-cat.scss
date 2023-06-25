@@ -1,0 +1,121 @@
+@use "../layout/colors" as *;
+
+@use "../helpers/mixins" as *;
+
+.why-you-need-cat {
+  margin: {
+    top: 65px;
+    bottom: 24px;
+
+    left: auto;
+    right: auto;
+  }
+
+  flex-wrap: wrap;
+
+  &__text-side {
+    max-width: 445px;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+
+    .title {
+      font-size: 48px;
+
+      padding-top: 17px !important;
+
+      @include mobile-break {
+        font-size: 40px;
+      }
+
+      & + .description {
+        font-size: 18px;
+        font-weight: 500;
+
+        color: $veryDarkBrown;
+
+        line-height: 23px;
+
+        @include mobile-break {
+          line-height: 26px;
+        }
+      }
+    }
+
+    .read-more-btn {
+      @include mobile-break {
+        margin-bottom: 65px;
+      }
+    }
+  }
+
+  &__images-side {
+    display: flex;
+    align-items: flex-start;
+    gap: 27px;
+
+    @include med-break {
+      gap: 15px;
+    }
+
+    @include mobile-break {
+      gap: 15px;
+    }
+
+    .left-side {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 29px;
+
+      @include med-break {
+        gap: 10px;
+      }
+
+      @include mobile-break {
+        gap: 10px;
+      }
+    }
+
+    &__first-img {
+      width: 275px;
+
+      @include med-break {
+        width: 145px;
+      }
+
+      @include mobile-break {
+        width: 115px;
+      }
+    }
+
+    &__second-img {
+      width: 195px;
+
+      @include med-break {
+        width: 105px;
+      }
+
+      @include mobile-break {
+        width: 115px;
+      }
+    }
+
+    &__third-img {
+      width: 240px;
+
+      @include med-break {
+        width: 160px;
+      }
+
+      @include mobile-break {
+        width: 135px;
+      }
+
+      @media (max-width: 250px) {
+        width: 90px;
+      }
+    }
+  }
+}

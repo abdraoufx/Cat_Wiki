@@ -1,0 +1,167 @@
+@use "../layout/colors" as *;
+@use "../constants/app-constants" as *;
+
+.fx-full-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fx-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fx-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fx-center {
+  display: flex;
+  align-items: center;
+}
+
+.fx-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.logo {
+  width: 120px;
+}
+
+.white-logo {
+  filter: brightness(100);
+}
+
+.global-border-raid {
+  border-radius: $GLOBAL_BORDER_RAID;
+}
+
+.app-scrollbar {
+  &::-webkit-scrollbar {
+    width: 4.5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $veryLightGray-2;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $veryLightGray-2;
+
+    border-radius: $GLOBAL_BORDER_RAID;
+    border: 3px solid $gray;
+  }
+}
+
+.unvisible-by-opacity {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.visible-by-opacity {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.brown-title-with-line {
+  position: relative;
+
+  color: $veryDarkBrown;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 2px;
+
+    height: 3px;
+    width: 57px;
+
+    border-radius: 100vmax;
+
+    background-color: currentColor;
+  }
+
+  $y-padding: 8px;
+
+  &.line-up {
+    padding-top: $y-padding;
+
+    &::before {
+      top: 0;
+    }
+  }
+
+  &.line-down {
+    padding-bottom: $y-padding;
+
+    &::before {
+      bottom: 0;
+    }
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+
+  &.semi-bold {
+    font-weight: 500;
+  }
+}
+
+.more-btn {
+  background-color: transparent;
+  color: $lightBrown;
+
+  border: none;
+
+  text-transform: uppercase;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  gap: 7px;
+
+  height: fit-content;
+}
+
+.error-msg {
+  color: $veryDarkBrown;
+
+  font-weight: bold;
+
+  margin: 0 auto;
+}
+
+.top-one-breed {
+  position: relative;
+
+  z-index: 1;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 30%;
+    left: -15px;
+    transform: translateY(-30%);
+    z-index: -1;
+
+    width: 46px;
+    height: 70%;
+
+    background-color: $softOrange;
+
+    border-radius: calc($GLOBAL_BORDER_RAID / 2);
+  }
+}

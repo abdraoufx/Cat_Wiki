@@ -1,0 +1,28 @@
+@use "./layout/colors" as *;
+@use "./layout/normalize" as *;
+@use "./layout/utilities" as *;
+
+@use "./pages/hero" as *;
+@use "./pages/why-need-cat" as *;
+@use "./pages/show-cat-breed" as *;
+@use "./pages/top-ten-searched-breeds" as *;
+@use "./pages/footer" as *;
+
+@use "./pages/no-breed-found" as *;
+
+.main-page {
+  background-color: $white;
+
+  padding: 15px 0 0;
+
+  &__main-container {
+    padding: 0 15px;
+    margin: 0 auto;
+
+    max-width: 1320px;
+  }
+
+  &__logo {
+    margin-bottom: 15px;
+  }
+}

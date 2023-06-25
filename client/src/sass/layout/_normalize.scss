@@ -1,0 +1,64 @@
+@use "../layout/colors" as *;
+@use "../constants/app-constants" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif; // 400 = To > 700
+
+  overflow: hidden auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Hide the clear button Of input search */
+::-webkit-search-cancel-button,
+::-webkit-search-decoration,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* For Firefox */
+::-moz-search-clear-button {
+  display: none;
+}
+
+/* For Internet Explorer, Edge, and Safari */
+::-ms-clear {
+  display: none;
+}
+
+button {
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: $veryLightGray-2;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $veryLightGray-2;
+
+  border-radius: $GLOBAL_BORDER_RAID;
+  border: 8px solid $gray;
+}

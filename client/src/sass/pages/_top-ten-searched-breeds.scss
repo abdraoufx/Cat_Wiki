@@ -1,0 +1,107 @@
+@use "../layout/colors" as *;
+@use "../helpers/mixins" as *;
+
+.top-ten-searched-breeds {
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+
+    color: $veryDarkBrown;
+
+    margin-bottom: 52px;
+
+    @include mobile-break {
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
+  &__breed-info {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 46px;
+
+    margin-bottom: 55px;
+
+    @include mobile-break {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+
+      margin-bottom: 35px;
+    }
+
+    &__image {
+      height: 170px;
+      width: 170px;
+
+      object-fit: cover;
+    }
+
+    &__text-content {
+      flex: 1;
+
+      max-width: 888px;
+
+      @include mobile-break {
+        text-align: center;
+      }
+    }
+
+    &__name {
+      font-size: 36px;
+      font-weight: 600;
+
+      margin-bottom: 24px;
+
+      @include mobile-break {
+        font-size: 28px;
+      }
+
+      .number {
+        margin-right: 8px;
+      }
+    }
+
+    &__description {
+      font-size: 18px;
+      font-weight: 500;
+
+      line-height: 22px;
+
+      color: $veryDarkBrown;
+
+      @include mobile-break {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .view-more-seperator {
+    gap: 6px;
+
+    cursor: pointer;
+
+    margin-bottom: 105px;
+
+    @include mobile-break {
+      margin-bottom: 65px;
+    }
+
+    .line {
+      background-color: $veryDarkBrown;
+
+      height: 1.5px;
+      width: 45%;
+    }
+
+    .text {
+      text-transform: capitalize;
+
+      font-weight: 700;
+
+      text-wrap: nowrap;
+    }
+  }
+}

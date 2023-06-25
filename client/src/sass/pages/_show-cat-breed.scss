@@ -1,0 +1,212 @@
+@use "../layout/colors" as *;
+@use "../helpers/mixins" as *;
+
+// Custom Mixins
+@mixin responsive-small-content() {
+  @media (min-width: 651px) and (max-width: 887px) {
+    @content;
+  }
+}
+
+@mixin responsive-medium-content() {
+  @media (min-width: 888px) and (max-width: 967px) {
+    @content;
+  }
+}
+
+@mixin responsive-large-content() {
+  @media (min-width: 968px) and (max-width: 1132px) {
+    @content;
+  }
+}
+
+.show-cat-breed {
+  .info-content-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 115px;
+    padding: 0 39px;
+    margin-bottom: 80px;
+
+    @include responsive-large-content() {
+      gap: 50px;
+    }
+
+    @include responsive-medium-content() {
+      gap: 25px;
+    }
+
+    @include responsive-small-content() {
+      justify-content: center;
+      gap: 30px;
+    }
+
+    @include mobile-break {
+      justify-content: center;
+      gap: 30px;
+      padding: 0px;
+    }
+
+    .breed-first-img {
+      $widthAndHeight: 370px;
+      height: $widthAndHeight;
+      width: $widthAndHeight;
+      object-fit: cover;
+
+      @include responsive-large-content() {
+        height: calc($widthAndHeight - 100px);
+        width: calc($widthAndHeight - 100px);
+      }
+
+      @include responsive-medium-content() {
+        height: 215px;
+        width: 215px;
+      }
+
+      @include responsive-small-content() {
+        height: 250px;
+        width: 250px;
+      }
+
+      @include mobile-break {
+        height: 250px;
+        width: 250px;
+      }
+    }
+
+    .breed-info {
+      max-width: 540px;
+
+      &__name {
+        margin-bottom: 25px;
+        font-size: 36px;
+        font-weight: 600;
+        color: $veryDarkBrown;
+
+        @include mobile-break {
+          text-align: center;
+        }
+      }
+
+      &__description {
+        margin-bottom: 32px;
+        line-height: 22px;
+        color: $veryDarkBrown;
+        font-weight: 500;
+
+        @include mobile-break {
+          text-align: center;
+
+          line-height: 23px;
+        }
+      }
+
+      .one-line-and-rate-properties-container {
+        gap: 32px;
+      }
+
+      &__one-line-property-container,
+      &__property-rate {
+        @include mobile-break {
+          flex-flow: column wrap;
+        }
+
+        &__name {
+          color: $black;
+          font-weight: 700;
+          text-transform: capitalize;
+        }
+      }
+
+      &__one-line-property-container {
+        gap: 4px;
+
+        @include mobile-break {
+          gap: 10px;
+        }
+
+        &__content {
+          font-weight: 500;
+
+          @include mobile-break {
+            text-align: center;
+          }
+        }
+      }
+
+      &__property-rate {
+        &__name {
+          @include mobile-break {
+            margin-bottom: 12px;
+          }
+        }
+
+        &__rate-container {
+          gap: 9px;
+
+          &__rate-span {
+            height: 12px;
+            width: 60px;
+            border-radius: 8px;
+
+            @include mobile-break {
+              height: 8px;
+              width: 40px;
+            }
+
+            &:not(.active) {
+              background-color: $lightGray;
+            }
+
+            &.active {
+              background-color: $veryDarkBrown;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .other-photos {
+    margin-bottom: 175px;
+
+    @include mobile-break {
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 40px;
+
+      @include mobile-break {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+    }
+
+    &__images-container {
+      flex-wrap: wrap;
+      column-gap: 10px;
+
+      @include mobile-break {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      > img {
+        width: 278px;
+        height: 278px;
+        object-fit: cover;
+        margin-bottom: 50px;
+
+        @include responsive-small-content() {
+          height: 265px;
+          width: 265px;
+        }
+      }
+    }
+  }
+}

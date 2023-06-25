@@ -1,0 +1,17 @@
+// Transition Mixins
+@mixin ease-in-trans($ms) {
+  transition: $ms ease-in;
+}
+
+// Media Queries Mixins
+@mixin mobile-break {
+  @media (max-width: 651px) {
+    @content;
+  }
+}
+
+@mixin med-break {
+  @media (min-width: 652px) and (max-width: 1131px) {
+    @content;
+  }
+}

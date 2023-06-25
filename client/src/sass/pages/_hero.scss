@@ -1,0 +1,367 @@
+@use "../layout/colors" as *;
+@use "../constants/app-constants" as *;
+
+@use "../helpers/mixins" as *;
+
+.hero-section .intro,
+.hero-section .popular-cats-breeds-names,
+.why-you-need-cat {
+  padding: {
+    left: 40px;
+    right: 40px;
+  }
+
+  @include mobile-break {
+    padding: {
+      left: 25px;
+      right: 25px;
+    }
+  }
+}
+
+.hero-section {
+  .intro {
+    background-color: $black;
+    background-image: url(../../../public/images/cats_images/intro-cat-img.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+    @media (max-width: 805px) {
+      background-size: cover;
+    }
+
+    border-radius: $GLOBAL_BORDER_RAID $GLOBAL_BORDER_RAID 0px 0px; // top: right, left
+
+    padding: {
+      top: 40px;
+      bottom: 40px;
+    }
+
+    &.search-showed-on-mobile {
+      padding: {
+        left: 0px !important;
+        right: 0px !important;
+      }
+    }
+
+    @include mobile-break {
+      padding: {
+        top: 20px;
+        bottom: 20px;
+      }
+    }
+
+    &__content-container {
+      gap: 10px;
+    }
+
+    &__logo {
+      width: 280px;
+
+      @include mobile-break {
+        width: 85px;
+      }
+    }
+
+    &__text {
+      color: $white;
+
+      font-weight: 500;
+      font-size: 24px;
+
+      max-width: 360px;
+
+      @include mobile-break {
+        font-size: 10px;
+
+        max-width: 135px;
+      }
+    }
+
+    &__search-wrapper {
+      position: relative;
+
+      max-width: 380px;
+
+      padding: 12px 18px;
+      margin-top: 40px;
+
+      background-color: $white;
+      color: $veryDarkBrown;
+
+      @include ease-in-trans(220ms);
+
+      @include mobile-break {
+        max-width: 100px;
+
+        margin-top: 18px;
+      }
+
+      &.focus-on-mobile {
+        position: relative;
+        z-index: 21;
+
+        max-width: 100%;
+
+        border: 1px solid $black;
+
+        .intro__all-cats-breeds-names-box-container {
+          padding: 15px 0;
+        }
+      }
+
+      > input {
+        width: 100%;
+
+        background-color: transparent;
+        color: inherit;
+
+        font-weight: 500;
+        font-size: 18px;
+
+        border: none;
+
+        @include ease-in-trans(220ms);
+
+        @include mobile-break {
+          font-size: 12px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: inherit;
+        }
+      }
+    }
+
+    &__search-bar {
+      & + .search-icon {
+        font-size: 18px;
+        font-weight: bold;
+
+        @include mobile-break {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__all-cats-breeds-names-box-container {
+      position: absolute;
+      left: 0;
+      z-index: 10;
+
+      width: 100%;
+
+      padding: 15px 12px;
+
+      background-color: $white;
+
+      @include ease-in-trans(300ms);
+
+      @include mobile-break {
+        @include ease-in-trans(100ms);
+      }
+    }
+
+    &__all-cats-breeds-names-box {
+      height: fit-content;
+      max-height: 145px;
+
+      overflow-y: auto;
+
+      padding: 0 10px 0 0;
+
+      @include mobile-break {
+        max-height: 300px;
+      }
+
+      .no-breeds-names {
+        color: $brownTown;
+
+        font-weight: bold;
+
+        text-align: center;
+      }
+
+      .breed-name {
+        padding: 11px 6px;
+
+        border-radius: 5px;
+
+        color: $black;
+
+        font-weight: 500;
+
+        cursor: pointer;
+
+        @include ease-in-trans(220ms);
+
+        @include mobile-break {
+          font-size: 14px;
+        }
+
+        &:hover {
+          background-color: rgba($veryLightGray, 0.1);
+        }
+      }
+    }
+  }
+
+  .mobile-search-wrapper-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: $white;
+
+    padding: 7px 19px;
+
+    opacity: 0;
+    transform: translateX(-100%);
+
+    @include ease-in-trans(280ms);
+
+    &.show {
+      opacity: 1;
+
+      transform: translate(0%);
+    }
+
+    .close-icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &__icon {
+        padding: 12px;
+
+        border-radius: 8px;
+
+        background-color: rgba($veryLightGray, 0.1);
+      }
+    }
+  }
+
+  .popular-cats-breeds-names {
+    background-color: $lightGrayishOrange;
+
+    border-radius: 0px 0px $GLOBAL_BORDER_RAID $GLOBAL_BORDER_RAID; // bottom: right, left
+
+    padding: {
+      top: 40px;
+      bottom: 45px;
+    }
+
+    @include mobile-break {
+      padding: {
+        top: 20px;
+        bottom: 25px;
+      }
+    }
+
+    .most-searched-title {
+      font-size: 18px;
+
+      margin-bottom: 85px;
+
+      @include mobile-break {
+        font-size: 14px;
+
+        margin-bottom: 18px;
+      }
+    }
+
+    .discover-breeds {
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-bottom: 46px;
+
+      @include mobile-break {
+        gap: 4px;
+      }
+
+      &__title {
+        color: $veryDarkBrown;
+
+        font-size: 42px;
+
+        max-width: 450px;
+
+        @include mobile-break {
+          font-size: 18px;
+
+          max-width: 200px;
+        }
+      }
+
+      &__see-more-btn {
+        margin-bottom: 5px;
+
+        @include mobile-break {
+          margin-top: 8px;
+        }
+      }
+
+      &__cats-images {
+        flex-wrap: wrap;
+        gap: 12px;
+
+        @include mobile-break {
+          gap: 15px;
+        }
+
+        .error-msg {
+          text-align: center;
+        }
+
+        .img-wrapper {
+          margin: 0 auto;
+
+          > img {
+            width: 285px; // Choosing This Values Not based on the design and for the image to be showed
+            height: 230px;
+
+            object-fit: cover;
+
+            margin-bottom: 10px;
+
+            @media (min-width: 652px) and (max-width: 692px) {
+              width: 230px !important;
+              height: 230px !important;
+            }
+
+            @include mobile-break {
+              margin-bottom: 10px;
+
+              height: 134px;
+              width: 185px;
+            }
+
+            & + .breed-name {
+              color: $veryDarkBrown;
+
+              font-weight: bold;
+              font-size: 18px;
+
+              text-transform: capitalize;
+
+              @include mobile-break {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
