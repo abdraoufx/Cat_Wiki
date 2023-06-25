@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: http://localhost:3000");
 
 $API_URL = 'https://api.thecatapi.com/v1';
 
-$API_KEY = "live_nRUopoBMTb3ODHwZJO3wjJDIcp91Mup5Lu01lS2hTJpM4HlAmEPHV75sb5q8gPNh";
+$API_KEY = <CAT_API_KEY>;
 
 $endpoints = [
     "get_breeds_names" => "/breeds",
